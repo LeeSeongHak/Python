@@ -1,0 +1,66 @@
+머신러닝 Study
+
+학습의 목표
+ - 오차를 최소로 혹은 오차 함수의 값이 최소가 되는 w와 b를 찾는 것이다.
+ - 선을 찾는 것 == 기준을 찾는 것 == 모델을 찾는 것
+ - w1x1 + w2x2 = b 일 때, w1, w2, b를 찾는 것
+
+경사 하강법(Gradient Descent) :
+ - 오차 평면에서 공을 올려 놓았을 때 공이 굴러가는 방향(오차가 적어지는 방향)으로 w를 조정하여 기울기가 0인 w를 찾는 것
+
+ML의 종류
+ 1) supervised - 학습할 데이터가 주어지고 이를 통해 기계학습 실시
+ 2) upsupervised - 학습 데이터가 없이 주어진 데이터로 스스로 학습 실시
+
+Linear Regression(선형회귀)
+ - 선형으로 예측되는 모델을 구현하기 위한 알고리즘
+ - 일반적인 예측 알고리즘에서 선형회귀 방식은 매우 유용
+
+용어
+- Training data set : 학습을 시키기 위해 필요한 label이 존재하는 데이터 (반드시 존재해야 함)
+- Iteration, step, epoch : 여러 번 학습을 반복. 얼마나 반복할 것이냐?
+- Learning, training : 원하는 기준(Model)을 찾아냄
+- Test set, evaluation set : label이 없는 데이터. 학습에 의해 찾아낸 Model이 얼마나 정확한지 테스트 하기 위한 데이터
+- feature(특질) : 입력 값, 주어진 데이터(input이라고 하지 않는다.) 예를 들어 2개의 feature를 사용했으면 입력벡터가 2차원
+- weight(w1, w2) : 여러 개의 feature 중 어느 것에 더 가중치를 줄 것인가?
+
+Learning rate
+ - 학습을 시킬 때 가장 중요한 것. 
+ - 러닝 레이트 값을 너무 크게 주면 Overshooting(결과 값 = NaN!) 발생할 수 있음.
+ - 러닝 레이트 값을 너무 작게 주면 목표 지점에 도달하지 못하고 끝날 수 있음.
+
+Regression / Classfication
+1) Regression(회귀)
+ - 일반적으로 연속적인 숫자, 즉 예측 값이 float 형태인 문제들을 해결하는데 사용
+ - 출력에 연속성이 있다.
+ - 예를 들어, 지하철 역과의 거리, 일정 거리 안의 관공서, 마트, 학군의 수 등 여러 feature들로 어떤 지역의 땅값을 예측하는 문제
+2) Classification(분류) - 값을 한정시킴
+ - class를 예측하는 것 : 예측해야 할 대상이 정해져 있음
+ - Binary classification
+  - Yes/No로 대답할 수 있는 문제
+   (예 : Spam이냐? Ham이냐?)
+ - Multi-class classification
+  - 예측할 클래스가 여러 종류
+   (예 : A, B, C, D, F)
+  
+  Cost function
+  - 거리를 측정하여 그 오차가 최소인 Cost 함수를 찾아야 함
+  - Cost가 최소화(minimize)하는 w, b를 구하는 것이 학습의 목표
+  Cost(W, b) = (H(x1)-y1)의 제곱 + .... / 데이터의 개수
+  
+  Gradient Descent algorithm - w 값을 수정해가면서 기울기가 0인 값을 찾는 함수.
+  - Cost function에서 최소화된 w값을 찾기 위한 알고리즘
+  - 최소값을 찾을 때 많이 사용함
+  - W(feature)가 많아도 원하는 값을 찾을 수 있다.
+  
+  - 그래프에 임의의 w을 주고 해당 값을 이용한 경사도 확인
+  - 기울기가 0이 아니면 w값을 수정하고 다시 경사도를 확인
+  - 위 동작을 반복
+  
+  - 값을 얼마만큼씩 수정할 것인가? learning rate
+  
+  - 기울기를 구하기 위해서 ? -> 미분
+  
+  
+  
+  
